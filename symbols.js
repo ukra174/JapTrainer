@@ -5,7 +5,11 @@ var kataRom = [];
 var sym = [];
 var rom = [];
 var audio = new Audio('learning.mp3');
+var right = new Audio("ok.mp3");
+var wrong = new Audio("wrong.mp3");
 audio.volume = 0.3;
+right.volume = 0.2;
+wrong.volume = 0.2;
 function init(type){
     if(type=="hira"){
         sym = hira;
@@ -36,6 +40,9 @@ function check(){
     if(input.value==rom[index]){
         input.value = "";
         newChar();
+        right.play();
+    }else{
+        wrong.play();
     }
 }
 
