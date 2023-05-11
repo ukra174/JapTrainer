@@ -4,12 +4,14 @@ var kata = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","�
 var kataRom = ["a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","fu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa"];
 var sym = [];
 var rom = [];
-var audio = new Audio('learning.mp3');
-var right = new Audio("ok.mp3");
-var wrong = new Audio("wrong.mp3");
-audio.volume = 0.3;
-right.volume = 0.2;
-wrong.volume = 0.2;
+
+var music = new Audio('learning.mp3');
+var rightSfx = new Audio("ok.mp3");
+var wrongSfx = new Audio("wrong.mp3");
+music.volume = 0.3;
+rightSfx.volume = 0.2;
+wrongSfx.volume = 0.2;
+
 function init(type){
     if(type=="hira"){
         sym = hira;
@@ -18,37 +20,35 @@ function init(type){
         sym = kata;
         rom = kataRom;
     }
-    newChar();
+    newCharacter();
     setTimeout(function(){
     document.getElementById("userInput").oninput = function(){
-        audio.play();
+        music.play();
     }
-},1);
+},10);
     
 }
-var index = 0;
-function newChar(){
+var characterIndex = 0;
+function newCharacter(){
     setTimeout(function(){
-        var symbol = document.getElementById("symbol");
-        index = Math.floor(Math.random()*sym.length);
-        symbol.innerText = sym[index];
-    },1);
+        var character = document.getElementById("symbol");
+        characterIndex = Math.floor(Math.random()*sym.length);
+        character.innerText = sym[characterIndex];
+    },10);
 
 }
 function check(){
-    console.log(rom.length);
-    console.log(sym.length);
     input = document.getElementById("userInput");
-    if(input.value==rom[index] || input.value==sym[index]){
-        newChar();
-        right.play();
+    if(input.value==rom[characterIndex] || input.value==sym[characterIndex]){
+        newCharacter();
+        rightSfx.play();
     }else{
-        wrong.play();
+        wrongSfx.play();
     }
     input.value = "";
 }
 
-function search(ele) {
+function enter(ele) {
     if(event.key === 'Enter') {
         check();       
     }

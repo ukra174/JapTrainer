@@ -15,8 +15,8 @@ button{
 body{
   background-image: url("menuBg.png");
   overflow-y: hidden ! important;
-        overflow-x: hidden ! important;
-        background-color: #f8f8f8;
+  overflow-x: hidden ! important;
+  background-color: #f8f8f8;
 
 }
 .inputField{
