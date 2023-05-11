@@ -1,0 +1,46 @@
+button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 30px;
+  background-color: aliceblue;
+  border-color: antiquewhite;
+  border-radius: 5px;
+  border-width: 1px;
+}
+.menu{
+  margin-top: 60%;
+}
+body{
+  background-color: aquamarine;
+  background-image: none;
+}
+.inputField{
+  margin-top: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 30px;
+  border-color: rgba(250, 235, 215, 0.329);
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: rgba(240, 248, 255, 0.377);
+}
+.symbol{
+  margin-top: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 30px;
+  font-size: 1500%;
+  text-align: center;
+}
+.help{
+
+}
+.prompt{
+  
+}
