@@ -45,5 +45,11 @@ body{
 
 }
 .prompt{
+  z-index: 10000;
+  position:absolute;
+  width: 800px;
+  height: 489px;
+  top:0px;
+  left:25%;
 
 }
