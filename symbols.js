@@ -4,6 +4,7 @@ var kata = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","�
 var kataRom = ["a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","fu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa"];
 var sym = [];
 var rom = [];
+var promptUrl = "";
 
 var music = new Audio('learning.mp3');
 var rightSfx = new Audio("ok.mp3");
@@ -13,6 +14,7 @@ rightSfx.volume = 0.2;
 wrongSfx.volume = 0.2;
 
 function init(type){
+    promptUrl = "/"+type+"Prompt.png";
     if(type=="hira"){
         sym = hira;
         rom = hiraRom;
@@ -47,9 +49,28 @@ function check(){
     }
     input.value = "";
 }
+function openPrompt(){
+    var prompt = document.getElementById("prompt");
+    console.log(prompt);
+    if(prompt==null){
+    var img = document.createElement("img");
+    img.src = promptUrl;
+    img.classList.add("prompt"); 
+    img.id = "prompt";
+    img.onclick = function(){
+        this.remove();
+    }
+    document.body.appendChild(img);
+    }else{
+        prompt.remove();
+    }
 
+}
 function enter(ele) {
     if(event.key === 'Enter') {
         check();       
+    }else if(event.key == " "){
+        openPrompt();
+        document.getElementById("userInput").value = "";
     }
 }
