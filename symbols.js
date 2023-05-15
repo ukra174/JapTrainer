@@ -63,6 +63,7 @@ function openPrompt(){
     document.body.appendChild(img);
     }else{
         prompt.remove();
+        document.getElementById("userInput").value = "";
     }
 
 }
@@ -71,6 +72,5 @@ function enter(ele) {
         check();       
     }else if(event.key == " "){
         openPrompt();
-        document.getElementById("userInput").value = "";
     }
 }
