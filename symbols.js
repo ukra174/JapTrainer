@@ -14,7 +14,7 @@ rightSfx.volume = 0.2;
 wrongSfx.volume = 0.2;
 
 function init(type){
-    promptUrl = "/"+type+"Prompt.png";
+    promptUrl = "/JapTrainer/"+type+"Prompt.png";
     if(type=="hira"){
         sym = hira;
         rom = hiraRom;
