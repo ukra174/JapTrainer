@@ -63,7 +63,10 @@ function openPrompt(){
     document.body.appendChild(img);
     }else{
         prompt.remove();
-        document.getElementById("userInput").value = "";
+        setTimeout(function(){
+            document.getElementById("userInput").value = "";
+        },5);
+        
     }
 
 }
