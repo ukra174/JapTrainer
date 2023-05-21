@@ -13,7 +13,7 @@ button{
   margin-top: 30%;
 }
 body{
-  background-image: url("menuBg.png");
+  background-image: url("menuBg.png") no-repeat center center fixed;
   overflow-y: hidden ! important;
   overflow-x: hidden ! important;
   background-color: #f8f8f8;
