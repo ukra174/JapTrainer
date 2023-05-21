@@ -2,6 +2,8 @@ var hira = ["あ","い","う","え","お","か","き","く","け","こ","さ","�
 var hiraRom = ["a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","fu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa"];
 var kata = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ"];
 var kataRom = ["a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","fu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa"];
+var kanji_list = ['一', '七', '万', '三', '上', '下', '中', '九', '二', '五', '人', '今', '休', '会', '何', '先', '入', '八', '六', '円', '出', '前', '北', '十', '千', '午', '半', '南', '友', '口', '古', '右', '名', '四', '国', '土', '外', '多', '天', '女', '子', '学', '安', '小', '少', '山', '岩', '川', '左', '年', '店', '後', '手', '新', '日', '時', '書', '月', '木', '本', '朝', '東', '校', '母', '毎', '気', '水', '火', '父', '生', '男', '白', '百', '目', '社', '秋', '空', '立', '耳', '聞', '花', '行', '西', '見', '言', '話', '語', '読', '谷', '足', '車', '週', '道', '金', '長', '間', '雨', '電', '食', '飲', '高', '魚', '黄', '黒', '点'];
+var romaji_list = ['ichi', 'shichi/nana', 'man', 'san', 'ue', 'shita', 'naka', 'kyuu', 'ni', 'go', 'jin/nin', 'ima', 'yasumi', 'kai', 'nani', 'saki', 'iri', 'hachi', 'roku', 'en', 'de/da', 'mae', 'kita', 'juu', 'sen', 'go', 'han', 'minami', 'tomo', 'kuchi', 'furu', 'migi', 'na', 'shi', 'koku', 'tsuchi', 'soto', 'ta', 'ten', 'onna', 'ko', 'gaku', 'yasui', 'ko', 'sukunai', 'yama', 'iwa', 'kawa', 'hidari', 'toshi', 'mise', 'go', 'te', 'shin', 'nichi', 'ji', 'sho', 'getsu', 'ki', 'hon', 'asa', 'higashi', 'kou', 'haha', 'mai', 'ki', 'mizu', 'hi', 'chichi', 'sei', 'otoko', 'shiro/shiroi', 'hyaku', 'me', 'sha/yashiro', 'aki', 'sora', 'tachi', 'mimi', 'kiku', 'hana', 'gyou', 'nishi', 'mi', 'gen', 'wa', 'go', 'yomi', 'tani', 'ashi', 'kuruma', 'shuu', 'michi', 'kin', 'naga', 'aida', 'ame', 'den', 'shoku', 'in', 'kou', 'gyo', 'kuro', 'ten'];
 var sym = [];
 var rom = [];
 var promptUrl = "";
@@ -18,9 +20,12 @@ function init(type){
     if(type=="hira"){
         sym = hira;
         rom = hiraRom;
-    }else{
+    }else if(type = "kanj"){
         sym = kata;
         rom = kataRom;
+    }else{
+        sym = kanji_list;
+        rom = romaji_list;
     }
     newCharacter();
     setTimeout(function(){
@@ -41,7 +46,7 @@ function newCharacter(){
 }
 function check(){
     input = document.getElementById("userInput");
-    if(input.value==rom[characterIndex] || input.value==sym[characterIndex]){
+    if(rom[characterIndex].split("/").includes(input.value==rom[characterIndex]) || input.value==sym[characterIndex]){
         newCharacter();
         rightSfx.play();
     }else{
