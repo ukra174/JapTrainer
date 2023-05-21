@@ -24,7 +24,11 @@ function init(type){
     }else if(type == "kata"){
         sym = kata;
         rom = kataRom;
-    }else{
+    }else if(type == "both"){
+        sym = kata.concat(hira);
+        rom = kataRom.concat(hiraRom);
+    }
+    else{
         sym = kanji_list;
         rom = romaji_list;
     }
