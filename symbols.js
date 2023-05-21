@@ -16,7 +16,8 @@ music.volume = 0.3;
 rightSfx.volume = 0.2;
 wrongSfx.volume = 0.2;
 
-function init(type){
+function init(){
+    var type = new URLSearchParams(window.location.search).get("type");
     promptUrl = "/JapTrainer/"+type+"Prompt.png";
     if(type=="hira"){
         sym = hira;
