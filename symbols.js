@@ -46,7 +46,7 @@ function newCharacter(){
 }
 function check(){
     input = document.getElementById("userInput");
-    if(rom[characterIndex].split("/").includes(input.value==rom[characterIndex]) || input.value==sym[characterIndex]){
+    if(rom[characterIndex].split("/").includes(input.value) || input.value==sym[characterIndex]){
         newCharacter();
         rightSfx.play();
     }else{
