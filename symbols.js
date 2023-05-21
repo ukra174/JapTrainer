@@ -20,7 +20,7 @@ function init(type){
     if(type=="hira"){
         sym = hira;
         rom = hiraRom;
-    }else if(type = "kanj"){
+    }else if(type = "kata"){
         sym = kata;
         rom = kataRom;
     }else{
