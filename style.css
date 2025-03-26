@@ -1,4 +1,4 @@
-button{
+button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -9,10 +9,12 @@ button{
   border-radius: 5px;
   border-width: 1px;
 }
-.menu{
+
+.menu {
   margin-top: 450pt;
 }
-body{
+
+body {
   background: url("menuBg.png") no-repeat center center fixed;
   background-size: cover;
   overflow-y: hidden ! important;
@@ -20,7 +22,8 @@ body{
   background-color: #f8f8f8;
 
 }
-.inputField{
+
+.inputField {
   margin-top: 250pt;
   display: block;
   margin-left: auto;
@@ -32,22 +35,23 @@ body{
   border-width: 1px;
   background-color: rgba(240, 248, 255, 0.377);
 }
-.symbol{
+
+.symbol {
   margin-top: 10%;
   display: block;
   height: 30px;
   font-size: 1500%;
   text-align: center;
 }
-.help{
 
-}
-.prompt{
+.help {}
+
+.prompt {
   z-index: 10000;
-  position:absolute;
+  position: absolute;
   width: 800px;
   height: 489px;
-  top:0px;
-  left:25%;
-
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
